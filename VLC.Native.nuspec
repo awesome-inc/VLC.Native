@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>VLC.Native</id>
+        <version>$Version$</version>
+        <authors>tmentzel, mkoertgen</authors>
+        <owners>http://www.videolan.org/</owners>
+        <licenseUrl>http://opensource.org/licenses/GPL-3.0</licenseUrl>
+        <projectUrl>http://www.videolan.org/vlc/</projectUrl>
+        <iconUrl>http://images.videolan.org/images/favicon.ico</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>VLC native dependencies.</description>
+        <releaseNotes>VLC v$Version$ from
+- x86: http://download.videolan.org/pub/videolan/vlc/last/win32/vlc-$Version$-win32.zip
+- x64: http://download.videolan.org/pub/videolan/vlc/last/win64/vlc-$Version$-win64.zip</releaseNotes>
+        <copyright>Copyright © 1996-2015 VideoLAN and VLC Authors</copyright>
+        <tags>vlc</tags>
+    </metadata>
+    <files>
+        <file src="content\VlcConfiguration.cs.pp" target="content\VlcConfiguration.cs.pp" />
+        <file src="tools\Install.ps1" target="tools\Install.ps1" />
+        <file src="tools\Uninstall.ps1" target="tools\Uninstall.ps1" />
+        <file src="tools\Utility.psd1" target="tools\Utility.psd1" />
+        <file src="tools\Utility.psm1" target="tools\Utility.psm1" />
+        <file src="dist\x86\vlc-$Version$\**\*.dll" target="vlc\x86" />
+        <file src="dist\x64\vlc-$Version$\**\*.dll" target="vlc\x64" />
+    </files>
+</package>
