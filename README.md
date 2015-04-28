@@ -19,3 +19,16 @@ You should have the following tools on the command line
 - [7zip](https://chocolatey.org/packages/7zip.install)
 - [NuGet](https://chocolatey.org/packages/NuGet.CommandLine)
 
+## Example Usage with C#
+
+Installing the package using
+
+	Install-Package VLC.Native
+
+adds the file `VlcConfiguration.cs` to your project.
+
+## Where to go from here
+
+Have a look at 
+- [nVLC](https://www.nuget.org/packages/nVLC/), one of the few good managed wrappers for VLC
+- [hello.nVLC](https://github.com/mkoertgen/hello.nVLC), a minimal WPF player application  

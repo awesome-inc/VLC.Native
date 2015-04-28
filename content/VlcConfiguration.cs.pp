@@ -11,11 +11,18 @@ namespace $rootnamespace$
     /// <summary>
     /// Configuration class for VLC native dependencies
     /// </summary>
-    public static partial class VlcConfiguration
+    public class VlcConfiguration
     {
-        private static string _libVlcVersion;
+        private string _libVlcVersion;
+        private bool _vlcChecked;
+        private readonly string _homePath;
 
-        public static string LibVlcVersion
+        public VlcConfiguration(string homePath = null)
+        {
+            _homePath = homePath ?? GetDefaultHomePath();
+        }
+
+        private string LibVlcVersion
         {
             get
             {
@@ -26,18 +33,20 @@ namespace $rootnamespace$
             }
         }
 
-        public static bool IsVlcPresent { get; private set; }
+        private bool IsVlcPresent { get; set; }
 
-        public static void VerifyVlcPresent()
+        public void VerifyVlcPresent()
         {
-            if (!IsVlcPresent) 
+            if (!_vlcChecked)
+                CheckVlc();
+
+            if (!IsVlcPresent)
                 throw new InvalidOperationException("Cannot find VLC directory.");
         }
 
-        static VlcConfiguration()
+        void CheckVlc()
         {
-            var homePath = GetHomePath();
-            var vlcPath = Path.Combine(homePath, "vlc");
+            var vlcPath = Path.Combine(_homePath, "vlc");
             var nativePath = Path.Combine(vlcPath, GetPlatform());
 
             IsVlcPresent = Directory.Exists(nativePath);
@@ -52,14 +61,15 @@ namespace $rootnamespace$
             path = String.Concat(nativePath, ";", path);
             Environment.SetEnvironmentVariable("PATH", path);
 
-            Trace.TraceInformation("Using VLC {0} {1} from {2}", 
+            Trace.TraceInformation("Using VLC {0} {1} from {2}",
                 LibVlcVersion, Environment.Is64BitProcess ? "x64" : "x86", nativePath);
+
+            _vlcChecked = true;
         }
 
-        private static string GetHomePath()
+        private static string GetDefaultHomePath()
         {
-            // TODO: add your lookup path which contains ".\vlc\**.*"
-            var homePath = GetSafeEnv("<your home>");
+            var homePath = GetSafeEnv("VLC_HOME");
             if (String.IsNullOrWhiteSpace(homePath))
             {
                 var executingAssemblyFile = new Uri(Assembly.GetEntryAssembly().GetName().CodeBase).LocalPath;
