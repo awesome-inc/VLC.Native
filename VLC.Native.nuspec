@@ -5,7 +5,7 @@
         <version>$Version$.$Build$</version>
         <authors>tmentzel, mkoertgen</authors>
         <owners>http://www.videolan.org/</owners>
-        <licenseUrl>http://opensource.org/licenses/GPL-3.0</licenseUrl>
+        <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.txt</licenseUrl>
         <projectUrl>http://www.videolan.org/vlc/</projectUrl>
         <iconUrl>http://images.videolan.org/images/favicon.ico</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
