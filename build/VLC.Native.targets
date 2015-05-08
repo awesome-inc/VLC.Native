@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="CopyContent" AfterTargets="Build">
+   <ItemGroup>
+      <VlcFiles Include="$(SolutionDir)packages\VLC.Native.*\vlc\**\*.*"/>
+    </ItemGroup>
+    <Message Text="Copy VLC to output..." Importance="high" />
+    <RemoveDir Directories="$(SolutionDir)Modules\_output\$(ProjectName)" />
+    <Copy SourceFiles="@(VlcFiles)" DestinationFolder="$(OutDir)vlc\%(RecursiveDir)"/>
+  </Target>
+</Project>

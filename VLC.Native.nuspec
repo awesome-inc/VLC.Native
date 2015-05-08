@@ -17,11 +17,9 @@
         <tags>vlc</tags>
     </metadata>
     <files>
-        <file src="content\VlcConfiguration.cs.pp" target="content\VlcConfiguration.cs.pp" />
-        <file src="tools\Install.ps1" target="tools\Install.ps1" />
-        <file src="tools\Uninstall.ps1" target="tools\Uninstall.ps1" />
-        <file src="tools\Utility.psd1" target="tools\Utility.psd1" />
-        <file src="tools\Utility.psm1" target="tools\Utility.psm1" />
+        <file src="content\*.*" target="content" />
+        <file src="tools\*.*" target="tools" />
+        <file src="build\*.* target="build" />
         <file src="dist\x86\vlc-$Version$\**\*.dll" target="vlc\x86" />
         <file src="dist\x64\vlc-$Version$\**\*.dll" target="vlc\x64" />
     </files>

@@ -1,7 +1,9 @@
 @echo off
 setlocal
 set version=%1
+set build=%2
 if "%version%" == "" set version=2.2.0
+if "%build%"== "" set build=0
 
 :download_dist
 echo Downloading VLC %version%.
@@ -16,6 +18,6 @@ if not exist dist\x86\vlc-%version%\vlc.exe 7za x %dist32% -odist\x86 > nul
 if not exist dist\x64\vlc-%version%\vlc.exe 7za x %dist32% -odist\x64 > nul
 
 :build_package
-nuget pack VLC.Native.nuspec -Properties Version=%version% -NoPackageAnalysis
+nuget pack VLC.Native.nuspec -Properties Version=%version%.%build% -NoPackageAnalysis
 
 endlocal
