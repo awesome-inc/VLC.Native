@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>VLC.Native</id>
-        <version>$Version$</version>
+        <version>$Version$.$Build$</version>
         <authors>tmentzel, mkoertgen</authors>
         <owners>http://www.videolan.org/</owners>
         <licenseUrl>http://opensource.org/licenses/GPL-3.0</licenseUrl>
@@ -18,9 +18,8 @@
     </metadata>
     <files>
         <file src="content\*.*" target="content" />
-        <file src="tools\*.*" target="tools" />
-        <file src="build\*.* target="build" />
-        <file src="dist\x86\vlc-$Version$\**\*.dll" target="vlc\x86" />
-        <file src="dist\x64\vlc-$Version$\**\*.dll" target="vlc\x64" />
+        <file src="build\*.*" target="build" />
+        <file src="dist\x86\vlc-$Version$\**\*.*" target="vlc\x86" />
+        <file src="dist\x64\vlc-$Version$\**\*.*" target="vlc\x64" />
     </files>
 </package>
