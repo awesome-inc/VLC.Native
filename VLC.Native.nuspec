@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>VLC.Native</id>
-        <version>$Version$.$Build$</version>
-        <authors>tmentzel, mkoertgen</authors>
+        <version>$Version$</version>
+        <authors>Awesome Incremented and Contributors</authors>
         <owners>http://www.videolan.org/</owners>
         <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.txt</licenseUrl>
-        <projectUrl>http://www.videolan.org/vlc/</projectUrl>
+        <projectUrl>https://github.com/awesome-inc/VLC.Native</projectUrl>
         <iconUrl>http://images.videolan.org/images/favicon.ico</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>VLC native dependencies.</description>
