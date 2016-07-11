@@ -3,10 +3,10 @@
     <metadata>
         <id>VLC.Native</id>
         <version>$Version$.$Build$</version>
-        <authors>tmentzel, mkoertgen</authors>
+        <authors>Awesome Incremented and Contributors</authors>
         <owners>http://www.videolan.org/</owners>
         <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.txt</licenseUrl>
-        <projectUrl>http://www.videolan.org/vlc/</projectUrl>
+        <projectUrl>https://github.com/awesome-inc/VLC.Native</projectUrl>
         <iconUrl>http://images.videolan.org/images/favicon.ico</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>VLC native dependencies.</description>
