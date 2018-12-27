@@ -1,7 +1,7 @@
 @echo off
 setlocal
 set version=%1
-if "%version%" == "" set version=2.2.4
+if "%version%" == "" set version=3.0.5
 if "%build%"== "" set build=1
 
 :download_dist
