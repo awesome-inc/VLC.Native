@@ -1,7 +1,7 @@
 @echo off
 setlocal
 set version=%1
-if "%version%" == "" set version=3.0.5
+if "%version%" == "" set version=3.0.8
 if "%build%"== "" set build=1
 
 :download_dist
@@ -13,8 +13,8 @@ if not exist %dist64% call curl -O http://download.videolan.org/pub/videolan/vlc
 
 :unzip_dist
 echo Unzipping.
-if not exist dist\x86\vlc-%version%\vlc.exe 7za x %dist32% -odist\x86 > nul
-if not exist dist\x64\vlc-%version%\vlc.exe 7za x %dist64% -odist\x64 > nul
+if not exist dist\x86\vlc-%version%\vlc.exe 7z x %dist32% -odist\x86 > nul
+if not exist dist\x64\vlc-%version%\vlc.exe 7z x %dist64% -odist\x64 > nul
 
 :build_package
 nuget pack VLC.Native.nuspec -Properties Version=%version%;Build=%build% -NoPackageAnalysis

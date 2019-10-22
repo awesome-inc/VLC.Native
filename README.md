@@ -10,10 +10,10 @@ A utility script for building a VLC redistribution NuGet package.
 On the command line, type
 
 ```console
-build.bat [version=3.0.5]
+build.bat [version=3.0.8]
 ```
 
-where `version` defaults to `3.0.5` and refers to the VCL version you want to package.
+where `version` defaults to `3.0.8` and refers to the VCL version you want to package.
 The script then downloads, unzips and packages the VLC distribution from the official [VLC download site](http://download.videolan.org/pub/videolan/vlc).
 
 ## Prerequisites
