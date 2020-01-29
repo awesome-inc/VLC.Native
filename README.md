@@ -34,6 +34,21 @@ Install-Package VLC.Native
 
 adds the file `VlcConfiguration.cs` to your project.
 
+**NOTE:** The VLC dependency package is quite big (~320MB, 166 MB each for x86/x64), so when using `VLC.Native` together with [Continuous Testing](https://en.wikipedia.org/wiki/Continuous_testing) Tools (e.g. [NCrunch](https://www.ncrunch.net/)) you may consider disabling the large footprint of the native VLC dependencies by setting
+
+```xml
+<PropertyGroup>
+  <!-- set to anything different than '', e.g. 1 -->
+  <DisableVlcNative>$(NCrunch)</DisableVlcNative>
+</PropertyGroup>
+```
+
+Here we used NCrunch-specific build properties but any value other than `''` will cause `VLC.Native` to skip including
+the native dependencies as content to your build, c.f.
+
+- [NCrunch-Specific Overrides](https://www.ncrunch.net/documentation/troubleshooting_ncrunch-specific-overrides)
+- [NCrunch Build Properties](https://www.ncrunch.net/documentation/troubleshooting_ncrunch-build-properties)
+
 ## Where to go from here
 
 Have a look at
